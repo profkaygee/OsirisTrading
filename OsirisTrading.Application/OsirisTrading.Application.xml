@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OsirisTrading.Application</name>
+    </assembly>
+    <members>
+        <member name="T:OsirisTrading.Application.SelectAllVehiclesQuery">
+            <summary>
+            The select vehicles manager.
+            </summary>
+            <seealso cref="!:MediatR.IRequest&lt;System.Collections.Generic.IList&lt;OsirisTrading.Domain.Dto.Vehicle&gt;&gt;" />
+        </member>
+        <member name="T:OsirisTrading.Application.SelectSpecificVehicleQuery">
+            <summary>
+            The Specific Vehicle Query Manager.
+            </summary>
+            <seealso cref="!:MediatR.IRequest&lt;OsirisTrading.Domain.Dto.Vehicle&gt;" />
+        </member>
+        <member name="M:OsirisTrading.Application.SelectSpecificVehicleQuery.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OsirisTrading.Application.SelectSpecificVehicleQuery"/> class.
+            </summary>
+            <param name="vehicleId">The vehicle identifier.</param>
+        </member>
+        <member name="P:OsirisTrading.Application.SelectSpecificVehicleQuery.VehicleId">
+            <summary>
+            Gets or sets the vehicle identifier.
+            </summary>
+            <value>
+            The vehicle identifier.
+            </value>
+        </member>
+    </members>
+</doc>

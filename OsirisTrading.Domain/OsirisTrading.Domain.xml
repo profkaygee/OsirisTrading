@@ -1,0 +1,423 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OsirisTrading.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:OsirisTrading.Domain.CommandResult">
+            <summary>
+            The command result
+            </summary>
+        </member>
+        <member name="P:OsirisTrading.Domain.CommandResult.Accepted">
+            <summary>
+            Gets a value indicating whether this <see cref="T:OsirisTrading.Domain.CommandResult"/> is accepted.
+            </summary>
+            <value>
+              <c>true</c> if accepted; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.CommandResult.ResourceId">
+            <summary>
+            Gets the resource identifier.
+            </summary>
+            <value>
+            The resource identifier.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.CommandResult.ResourceUrl">
+            <summary>
+            Gets the resource URL.
+            </summary>
+            <value>
+            The resource URL.
+            </value>
+        </member>
+        <member name="M:OsirisTrading.Domain.CommandResult.#ctor(System.Guid,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OsirisTrading.Domain.CommandResult"/> class.
+            </summary>
+            <param name="resourceId">The resource identifier.</param>
+            <param name="accepted">if set to <c>true</c> [accepted].</param>
+        </member>
+        <member name="M:OsirisTrading.Domain.CommandResult.#ctor(System.Guid,System.Boolean,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OsirisTrading.Domain.CommandResult"/> class.
+            </summary>
+            <param name="resourceId">The resource identifier.</param>
+            <param name="accepted">if set to <c>true</c> [accepted].</param>
+            <param name="url">The URL.</param>
+        </member>
+        <member name="P:OsirisTrading.Domain.CommandResult.Messages">
+            <summary>
+            Gets the messages.
+            </summary>
+            <value>
+            The messages.
+            </value>
+        </member>
+        <member name="M:OsirisTrading.Domain.CommandResult.AddResultMessage(OsirisTrading.Domain.ResultMessageType,System.String,System.String)">
+            <summary>
+            Adds the result message.
+            </summary>
+            <param name="messageType">Type of the message.</param>
+            <param name="code">The code.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="T:OsirisTrading.Domain.Dto.ValidationResult">
+            <summary>
+            The validation result
+            </summary>
+        </member>
+        <member name="P:OsirisTrading.Domain.Dto.ValidationResult.IsValid">
+            <summary>
+            Returns true if ... is valid.
+            </summary>
+            <value>
+              <c>true</c> if this instance is valid; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Dto.ValidationResult.ValidationMessages">
+            <summary>
+            Gets or sets the validation messages.
+            </summary>
+            <value>
+            The validation messages.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Dto.ValidationResult.FullValidationMessage">
+            <summary>
+            Gets the full validation message.
+            </summary>
+            <value>
+            The full validation message.
+            </value>
+        </member>
+        <member name="T:OsirisTrading.Domain.Dto.ValidationResult`1">
+            <summary>
+            The validation result.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:OsirisTrading.Domain.Dto.ValidationResult`1.Data">
+            <summary>
+            Gets or sets the data.
+            </summary>
+            <value>
+            The data.
+            </value>
+        </member>
+        <member name="T:OsirisTrading.Domain.Dto.Vehicle">
+            <summary>
+            The vehicle model
+            </summary>
+        </member>
+        <member name="M:OsirisTrading.Domain.Dto.Vehicle.#ctor">
+            <summary>
+            The vehicle model constructor.
+            </summary>
+        </member>
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.Uid">
+            <summary>
+            Gets or sets the uid.
+            </summary>
+            <value>
+            The uid.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.Vin">
+            <summary>
+            Gets or sets the vin.
+            </summary>
+            <value>
+            The vin.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.MakeAndModel">
+            <summary>
+            Gets or sets the make and model.
+            </summary>
+            <value>
+            The make and model.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.Color">
+            <summary>
+            Gets or sets the color.
+            </summary>
+            <value>
+            The color.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.Transmission">
+            <summary>
+            Gets or sets the transmission.
+            </summary>
+            <value>
+            The transmission.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.DriveType">
+            <summary>
+            Gets or sets the type of the drive.
+            </summary>
+            <value>
+            The type of the drive.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.FuelType">
+            <summary>
+            Gets or sets the type of the fuel.
+            </summary>
+            <value>
+            The type of the fuel.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.CarType">
+            <summary>
+            Gets or sets the type of the car.
+            </summary>
+            <value>
+            The type of the car.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.CarOptions">
+            <summary>
+            Gets or sets the car options.
+            </summary>
+            <value>
+            The car options.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.Specifications">
+            <summary>
+            Gets or sets the specifications.
+            </summary>
+            <value>
+            The specifications.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.Doors">
+            <summary>
+            Gets or sets the doors.
+            </summary>
+            <value>
+            The doors.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.Mileage">
+            <summary>
+            Gets or sets the mileage.
+            </summary>
+            <value>
+            The mileage.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.Kilometrage">
+            <summary>
+            Gets or sets the kilometrage.
+            </summary>
+            <value>
+            The kilometrage.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.LicensePlate">
+            <summary>
+            Gets or sets the license plate.
+            </summary>
+            <value>
+            The license plate.
+            </value>
+        </member>
+        <member name="T:OsirisTrading.Domain.Entities.VehicleEntity">
+            <summary>
+            The vehicle entity
+            </summary>
+        </member>
+        <member name="P:OsirisTrading.Domain.Entities.VehicleEntity.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Entities.VehicleEntity.Uid">
+            <summary>
+            Gets or sets the uid.
+            </summary>
+            <value>
+            The uid.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Entities.VehicleEntity.Vin">
+            <summary>
+            Gets or sets the vin.
+            </summary>
+            <value>
+            The vin.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Entities.VehicleEntity.MakeAndModel">
+            <summary>
+            Gets or sets the make and model.
+            </summary>
+            <value>
+            The make and model.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Entities.VehicleEntity.Color">
+            <summary>
+            Gets or sets the color.
+            </summary>
+            <value>
+            The color.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Entities.VehicleEntity.Transmission">
+            <summary>
+            Gets or sets the transmission.
+            </summary>
+            <value>
+            The transmission.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Entities.VehicleEntity.DriveType">
+            <summary>
+            Gets or sets the type of the drive.
+            </summary>
+            <value>
+            The type of the drive.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Entities.VehicleEntity.FuelType">
+            <summary>
+            Gets or sets the type of the fuel.
+            </summary>
+            <value>
+            The type of the fuel.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Entities.VehicleEntity.CarType">
+            <summary>
+            Gets or sets the type of the car.
+            </summary>
+            <value>
+            The type of the car.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Entities.VehicleEntity.CarOptions">
+            <summary>
+            Gets or sets the car options.
+            </summary>
+            <value>
+            The car options.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Entities.VehicleEntity.Specifications">
+            <summary>
+            Gets or sets the specifications.
+            </summary>
+            <value>
+            The specifications.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Entities.VehicleEntity.Doors">
+            <summary>
+            Gets or sets the doors.
+            </summary>
+            <value>
+            The doors.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Entities.VehicleEntity.Mileage">
+            <summary>
+            Gets or sets the mileage.
+            </summary>
+            <value>
+            The mileage.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Entities.VehicleEntity.Kilometrage">
+            <summary>
+            Gets or sets the kilometrage.
+            </summary>
+            <value>
+            The kilometrage.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.Entities.VehicleEntity.LicensePlate">
+            <summary>
+            Gets or sets the license plate.
+            </summary>
+            <value>
+            The license plate.
+            </value>
+        </member>
+        <member name="T:OsirisTrading.Domain.ResultMessage">
+            <summary>
+            The result message type
+            </summary>
+        </member>
+        <member name="M:OsirisTrading.Domain.ResultMessage.#ctor(OsirisTrading.Domain.ResultMessageType,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OsirisTrading.Domain.ResultMessage"/> class.
+            </summary>
+            <param name="messageType">Type of the message.</param>
+            <param name="code">The code.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="P:OsirisTrading.Domain.ResultMessage.MessageType">
+            <summary>
+            Gets the type of the message.
+            </summary>
+            <value>
+            The type of the message.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.ResultMessage.Message">
+            <summary>
+            Gets the message.
+            </summary>
+            <value>
+            The message.
+            </value>
+        </member>
+        <member name="P:OsirisTrading.Domain.ResultMessage.Code">
+            <summary>
+            Gets the code.
+            </summary>
+            <value>
+            The code.
+            </value>
+        </member>
+        <member name="T:OsirisTrading.Domain.ResultMessageType">
+            <summary>
+            The result message type enum
+            </summary>
+        </member>
+        <member name="F:OsirisTrading.Domain.ResultMessageType.Information">
+            <summary>
+            The information
+            </summary>
+        </member>
+        <member name="F:OsirisTrading.Domain.ResultMessageType.Warning">
+            <summary>
+            The warning
+            </summary>
+        </member>
+        <member name="F:OsirisTrading.Domain.ResultMessageType.Error">
+            <summary>
+            The error
+            </summary>
+        </member>
+    </members>
+</doc>

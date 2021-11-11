@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\kagis\source\repos\OsirisTrading\OsirisTrading_API\OsirisTrading_API.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IdentityServer4" Version="4.1.2" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="4.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OsirisTrading.Application\OsirisTrading.Application.csproj" />
+    <ProjectReference Include="..\OsirisTrading.Contracts\OsirisTrading.Contracts.csproj" />
+    <ProjectReference Include="..\OsirisTrading.Domain\OsirisTrading.Domain.csproj" />
+    <ProjectReference Include="..\OsirisTrading.Infrastructure\OsirisTrading.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
