@@ -96,5 +96,44 @@ namespace OsirisTrading_API.Controllers.v1
                 return BadRequest(result);
             }
         }
+
+        /// <summary>
+        /// Searches the vehicle.
+        /// </summary>
+        /// <param name="phrase">The phrase.</param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("search/{phrase}")]
+        [ProducesResponseType(typeof(Vehicle), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ValidationResult), (int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> SearchVehicle(string phrase)
+        {
+            try
+            {
+                if (!_memoryCache.TryGetValue(ConstantKeys.VehiclesKey, out IList<Vehicle> vehicles))
+                {
+                    vehicles = await Mediator.Send(new SelectAllVehiclesQuery());
+                    var cacheOptions = new MemoryCacheEntryOptions()
+                        .SetSlidingExpiration(TimeSpan.FromDays(1));
+                    _memoryCache.Set(ConstantKeys.VehiclesKey, vehicles, cacheOptions);
+                }
+
+                // Look for the vehicle here and return it.
+                var selectedVehicles = vehicles.Where(x =>
+                    !string.IsNullOrWhiteSpace(x.make_and_model) && x.make_and_model.Contains(phrase)).ToList();
+
+                if (selectedVehicles.Any())
+                    return Ok(selectedVehicles);
+
+                return NotFound();
+            }
+            catch (ArgumentException ex)
+            {
+                var result = new ValidationResult();
+                result.ValidationMessages ??= new List<string>();
+                result.ValidationMessages.Add(ex.Message);
+                return BadRequest(result);
+            }
+        }
     }
 }

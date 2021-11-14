@@ -141,7 +141,7 @@
             The vin.
             </value>
         </member>
-        <member name="P:OsirisTrading.Domain.Dto.Vehicle.MakeAndModel">
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.make_and_model">
             <summary>
             Gets or sets the make and model.
             </summary>
@@ -149,7 +149,7 @@
             The make and model.
             </value>
         </member>
-        <member name="P:OsirisTrading.Domain.Dto.Vehicle.Color">
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.color">
             <summary>
             Gets or sets the color.
             </summary>
@@ -157,7 +157,7 @@
             The color.
             </value>
         </member>
-        <member name="P:OsirisTrading.Domain.Dto.Vehicle.Transmission">
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.transmission">
             <summary>
             Gets or sets the transmission.
             </summary>
@@ -165,7 +165,7 @@
             The transmission.
             </value>
         </member>
-        <member name="P:OsirisTrading.Domain.Dto.Vehicle.DriveType">
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.drive_type">
             <summary>
             Gets or sets the type of the drive.
             </summary>
@@ -173,7 +173,7 @@
             The type of the drive.
             </value>
         </member>
-        <member name="P:OsirisTrading.Domain.Dto.Vehicle.FuelType">
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.fuel_type">
             <summary>
             Gets or sets the type of the fuel.
             </summary>
@@ -181,7 +181,7 @@
             The type of the fuel.
             </value>
         </member>
-        <member name="P:OsirisTrading.Domain.Dto.Vehicle.CarType">
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.car_type">
             <summary>
             Gets or sets the type of the car.
             </summary>
@@ -189,7 +189,7 @@
             The type of the car.
             </value>
         </member>
-        <member name="P:OsirisTrading.Domain.Dto.Vehicle.CarOptions">
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.car_options">
             <summary>
             Gets or sets the car options.
             </summary>
@@ -197,7 +197,7 @@
             The car options.
             </value>
         </member>
-        <member name="P:OsirisTrading.Domain.Dto.Vehicle.Specifications">
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.specs">
             <summary>
             Gets or sets the specifications.
             </summary>
@@ -205,7 +205,7 @@
             The specifications.
             </value>
         </member>
-        <member name="P:OsirisTrading.Domain.Dto.Vehicle.Doors">
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.doors">
             <summary>
             Gets or sets the doors.
             </summary>
@@ -213,7 +213,7 @@
             The doors.
             </value>
         </member>
-        <member name="P:OsirisTrading.Domain.Dto.Vehicle.Mileage">
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.mileage">
             <summary>
             Gets or sets the mileage.
             </summary>
@@ -221,7 +221,7 @@
             The mileage.
             </value>
         </member>
-        <member name="P:OsirisTrading.Domain.Dto.Vehicle.Kilometrage">
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.kilometrage">
             <summary>
             Gets or sets the kilometrage.
             </summary>
@@ -229,7 +229,7 @@
             The kilometrage.
             </value>
         </member>
-        <member name="P:OsirisTrading.Domain.Dto.Vehicle.LicensePlate">
+        <member name="P:OsirisTrading.Domain.Dto.Vehicle.license_plate">
             <summary>
             Gets or sets the license plate.
             </summary>

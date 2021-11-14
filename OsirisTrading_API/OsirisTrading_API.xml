@@ -69,6 +69,13 @@
             <param name="vehicleId">The vehicle identifier.</param>
             <returns></returns>
         </member>
+        <member name="M:OsirisTrading_API.Controllers.v1.VehicleController.SearchVehicle(System.String)">
+            <summary>
+            Searches the vehicle.
+            </summary>
+            <param name="phrase">The phrase.</param>
+            <returns></returns>
+        </member>
         <member name="T:OsirisTrading_API.Program">
             <summary>
             The program

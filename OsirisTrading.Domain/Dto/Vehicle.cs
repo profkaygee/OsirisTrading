@@ -13,8 +13,8 @@ namespace OsirisTrading.Domain.Dto
         /// </summary>
         public Vehicle()
         {
-            CarOptions = new List<string>();
-            Specifications = new List<string>();
+            car_options = new List<string>();
+            specs = new List<string>();
         }
 
         /// <summary>
@@ -50,8 +50,7 @@ namespace OsirisTrading.Domain.Dto
         /// <value>
         /// The make and model.
         /// </value>
-        [JsonPropertyName("make_and_model")]
-        public string MakeAndModel { get; set; }
+        public string make_and_model { get; set; }
 
         /// <summary>
         /// Gets or sets the color.
@@ -59,8 +58,7 @@ namespace OsirisTrading.Domain.Dto
         /// <value>
         /// The color.
         /// </value>
-        [JsonPropertyName("color")]
-        public string Color { get; set; }
+        public string color { get; set; }
 
         /// <summary>
         /// Gets or sets the transmission.
@@ -69,7 +67,7 @@ namespace OsirisTrading.Domain.Dto
         /// The transmission.
         /// </value>
         [JsonPropertyName("transmission")]
-        public string Transmission { get; set; }
+        public string transmission { get; set; }
 
         /// <summary>
         /// Gets or sets the type of the drive.
@@ -78,7 +76,7 @@ namespace OsirisTrading.Domain.Dto
         /// The type of the drive.
         /// </value>
         [JsonPropertyName("drive_type")]
-        public string DriveType { get; set; }
+        public string drive_type { get; set; }
 
         /// <summary>
         /// Gets or sets the type of the fuel.
@@ -87,7 +85,7 @@ namespace OsirisTrading.Domain.Dto
         /// The type of the fuel.
         /// </value>
         [JsonPropertyName("fuel_type")]
-        public string FuelType { get; set; }
+        public string fuel_type { get; set; }
 
         /// <summary>
         /// Gets or sets the type of the car.
@@ -96,7 +94,7 @@ namespace OsirisTrading.Domain.Dto
         /// The type of the car.
         /// </value>
         [JsonPropertyName("car_type")]
-        public string CarType { get; set; }
+        public string car_type { get; set; }
 
         /// <summary>
         /// Gets or sets the car options.
@@ -105,7 +103,7 @@ namespace OsirisTrading.Domain.Dto
         /// The car options.
         /// </value>
         [JsonPropertyName("car_options")]
-        public IList<string> CarOptions { get; set; }
+        public IList<string> car_options { get; set; }
 
         /// <summary>
         /// Gets or sets the specifications.
@@ -114,7 +112,7 @@ namespace OsirisTrading.Domain.Dto
         /// The specifications.
         /// </value>
         [JsonPropertyName("specs")]
-        public IList<string> Specifications { get; set; }
+        public IList<string> specs { get; set; }
 
         /// <summary>
         /// Gets or sets the doors.
@@ -123,7 +121,7 @@ namespace OsirisTrading.Domain.Dto
         /// The doors.
         /// </value>
         [JsonPropertyName("doors")]
-        public int Doors { get; set; }
+        public int doors { get; set; }
 
         /// <summary>
         /// Gets or sets the mileage.
@@ -132,7 +130,7 @@ namespace OsirisTrading.Domain.Dto
         /// The mileage.
         /// </value>
         [JsonPropertyName("mileage")]
-        public int Mileage { get; set; }
+        public int mileage { get; set; }
 
         /// <summary>
         /// Gets or sets the kilometrage.
@@ -141,7 +139,7 @@ namespace OsirisTrading.Domain.Dto
         /// The kilometrage.
         /// </value>
         [JsonPropertyName("kilometrage")]
-        public int Kilometrage { get; set; }
+        public int kilometrage { get; set; }
 
         /// <summary>
         /// Gets or sets the license plate.
@@ -150,6 +148,6 @@ namespace OsirisTrading.Domain.Dto
         /// The license plate.
         /// </value>
         [JsonPropertyName("license_plate")]
-        public string LicensePlate { get; set; }
+        public string license_plate { get; set; }
     }
 }
