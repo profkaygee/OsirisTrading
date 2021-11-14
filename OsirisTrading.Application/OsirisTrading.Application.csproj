@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OsirisTrading.Domain\OsirisTrading.Domain.csproj" />
+    <ProjectReference Include="..\OsirisTrading.Infrastructure\OsirisTrading.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

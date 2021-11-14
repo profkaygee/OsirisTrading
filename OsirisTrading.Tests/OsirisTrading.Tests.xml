@@ -4,5 +4,15 @@
         <name>OsirisTrading.Tests</name>
     </assembly>
     <members>
+        <member name="T:OsirisTrading.Tests.UnitTest1">
+            <summary>
+            The unit test classes.
+            </summary>
+        </member>
+        <member name="M:OsirisTrading.Tests.UnitTest1.TestMethod1">
+            <summary>
+            Tests the method1.
+            </summary>
+        </member>
     </members>
 </doc>

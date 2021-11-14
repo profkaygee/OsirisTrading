@@ -1,0 +1,1 @@
+﻿https://random-data-api.com/documentation

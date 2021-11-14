@@ -4,5 +4,36 @@
         <name>OsirisTrading.Infrastructure</name>
     </assembly>
     <members>
+        <member name="T:OsirisTrading.Infrastructure.ServiceLayer.IServiceLayer">
+            <summary>
+            The interface for the service layer.
+            </summary>
+        </member>
+        <member name="M:OsirisTrading.Infrastructure.ServiceLayer.IServiceLayer.SelectVehicles">
+            <summary>
+            Selects the vehicles.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OsirisTrading.Infrastructure.ServiceLayer.ServiceLayer">
+            <summary>
+            The service layer.
+            </summary>
+            <seealso cref="T:OsirisTrading.Infrastructure.ServiceLayer.IServiceLayer" />
+        </member>
+        <member name="M:OsirisTrading.Infrastructure.ServiceLayer.ServiceLayer.#ctor(RestSharp.IRestClient,OsirisTrading.Contracts.IApplicationSettings)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OsirisTrading.Infrastructure.ServiceLayer.ServiceLayer"/> class.
+            </summary>
+            <param name="client">The client.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="M:OsirisTrading.Infrastructure.ServiceLayer.ServiceLayer.SelectVehicles">
+            <summary>
+            Selects the vehicles.
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
     </members>
 </doc>

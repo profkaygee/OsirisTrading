@@ -9,8 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="RestSharp" Version="106.13.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="4.0.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OsirisTrading.Contracts\OsirisTrading.Contracts.csproj" />
+    <ProjectReference Include="..\OsirisTrading.Domain\OsirisTrading.Domain.csproj" />
   </ItemGroup>
 
 </Project>

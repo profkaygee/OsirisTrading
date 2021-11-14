@@ -4,17 +4,75 @@
         <name>OsirisTrading.Application</name>
     </assembly>
     <members>
+        <member name="T:OsirisTrading.Application.ApplicationExtensions">
+            <summary>
+            The application extensions.
+            </summary>
+        </member>
+        <member name="M:OsirisTrading.Application.ApplicationExtensions.AddApplicationLayer(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the application layer.
+            </summary>
+            <param name="services">The services.</param>
+        </member>
+        <member name="M:OsirisTrading.Application.ApplicationExtensions.Clone``1(``0)">
+            <summary>
+            Clones the specified source.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The source.</param>
+            <returns></returns>
+        </member>
+        <member name="T:OsirisTrading.Application.Handlers.SelectAllVehiclesQueryHandler">
+            <summary>
+            Select the all vehicles query;
+            </summary>
+            <seealso cref="T:OsirisTrading.Domain.Dto.Vehicle" />
+        </member>
+        <member name="M:OsirisTrading.Application.Handlers.SelectAllVehiclesQueryHandler.#ctor(OsirisTrading.Infrastructure.ServiceLayer.IServiceLayer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OsirisTrading.Application.Handlers.SelectAllVehiclesQueryHandler"/> class.
+            </summary>
+            <param name="serviceLayer">The service layer.</param>
+        </member>
+        <member name="M:OsirisTrading.Application.Handlers.SelectAllVehiclesQueryHandler.Handle(OsirisTrading.Application.SelectAllVehiclesQuery,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:OsirisTrading.Application.Handlers.SelectSpecificVehicleQueryHandler">
+            <summary>
+            This is the handler for specific vehicles
+            </summary>
+            <seealso cref="T:OsirisTrading.Domain.Dto.Vehicle" />
+        </member>
+        <member name="M:OsirisTrading.Application.Handlers.SelectSpecificVehicleQueryHandler.Handle(OsirisTrading.Application.SelectSpecificVehicleQuery,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
         <member name="T:OsirisTrading.Application.SelectAllVehiclesQuery">
             <summary>
             The select vehicles manager.
             </summary>
-            <seealso cref="!:MediatR.IRequest&lt;System.Collections.Generic.IList&lt;OsirisTrading.Domain.Dto.Vehicle&gt;&gt;" />
+            <seealso cref="T:OsirisTrading.Domain.Dto.Vehicle" />
         </member>
         <member name="T:OsirisTrading.Application.SelectSpecificVehicleQuery">
             <summary>
             The Specific Vehicle Query Manager.
             </summary>
-            <seealso cref="!:MediatR.IRequest&lt;OsirisTrading.Domain.Dto.Vehicle&gt;" />
+            <seealso cref="T:OsirisTrading.Domain.Dto.Vehicle" />
         </member>
         <member name="M:OsirisTrading.Application.SelectSpecificVehicleQuery.#ctor(System.String)">
             <summary>

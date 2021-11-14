@@ -7,8 +7,8 @@ namespace OsirisTrading.Application
     /// <summary>
     /// The select vehicles manager.
     /// </summary>
-    /// <seealso cref="MediatR.IRequest&lt;System.Collections.Generic.IList&lt;OsirisTrading.Domain.Dto.Vehicle&gt;&gt;" />
-    public class SelectAllVehiclesQuery : IRequest<Vehicle>
+    /// <seealso cref="Vehicle" />
+    public class SelectAllVehiclesQuery : IRequest<IList<Vehicle>>
     {
     }
 }

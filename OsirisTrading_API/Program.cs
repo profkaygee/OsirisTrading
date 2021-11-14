@@ -14,14 +14,10 @@ namespace OsirisTrading_API
     public class Program
     {
         /// <summary>
-        /// The configuration
-        /// </summary>
-        private static IConfiguration configuration;
-
-        /// <summary>
         /// Defines the entry point of the application.
         /// </summary>
         /// <param name="args">The arguments.</param>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public static void Main(string[] args)
         {
             IConfigurationBuilder builder = new ConfigurationBuilder();
@@ -52,7 +48,8 @@ namespace OsirisTrading_API
                         4 => new LoggerConfiguration().MinimumLevel.Debug()
                             .WriteTo.Console()
                             .WriteTo.File("Logs/Log.log", rollingInterval: RollingInterval.Day)
-                            .CreateLogger()
+                            .CreateLogger(),
+                        _ => throw new ArgumentOutOfRangeException(nameof(loggingLevel), "Thhe passed parameter has not be handled.")
                     };
                 }
 

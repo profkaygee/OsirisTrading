@@ -1,9 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using OsirisTrading.Application;
+using OsirisTrading.Contracts;
+using OsirisTrading.Infrastructure.ServiceLayer;
+using OsirisTrading.Mapping;
+using RestSharp;
 
 namespace OsirisTrading_API
 {
@@ -12,6 +18,9 @@ namespace OsirisTrading_API
     /// </summary>
     public class Startup
     {
+        private string identityServerUrl = string.Empty;
+        private string apiName = string.Empty;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Startup"/> class.
         /// </summary>
@@ -36,6 +45,7 @@ namespace OsirisTrading_API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddMemoryCache();
 
             services.AddIdentityServer()
                 .AddDeveloperSigningCredential()
@@ -45,12 +55,48 @@ namespace OsirisTrading_API
                 .AddTestUsers(TestUsers.Users);
 
             services.AddLocalApiAuthentication();
+            services.AddTransient<IRestClient, RestClient>();
+            services.AddTransient<IApplicationSettings, ApplicationSettings>();
+            services.AddTransient<IServiceLayer, ServiceLayer>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "OsirisTrading_API", Version = "v1" });
             });
+
+            // Add the versioning
+            services.AddApiVersioning(config =>
+            {
+                config.DefaultApiVersion = new ApiVersion(1, 0);
+                config.AssumeDefaultVersionWhenUnspecified = true;
+                config.ReportApiVersions = true;
+            });
+
+            services.AddHealthChecks();
+
+            MapServices(services);
+            MapIdentityServices(services);
+        }
+
+        private void MapIdentityServices(IServiceCollection services)
+        {
+            identityServerUrl = Configuration["AppSettings:IdentityServerUrl"];
+            apiName = Configuration["AppSettings:IdentityServerName"];
+
+            //services.AddAuthentication(options =>
+            //{
+
+            //}).AddJwtBearer(options =>
+            //{
+            //    options.backc
+            //})
+        }
+
+        private void MapServices(IServiceCollection services)
+        {
+            services.AddApplicationLayer();
+            services.AddAutoMapper(typeof(MappingProfile));
         }
 
         /// <summary>

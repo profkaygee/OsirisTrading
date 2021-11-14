@@ -35,15 +35,36 @@
             </summary>
             <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
         </member>
-        <member name="M:OsirisTrading_API.Controllers.v1.VehicleController.SelectAllVehicles">
+        <member name="P:OsirisTrading_API.Controllers.BaseApiController.Mediator">
             <summary>
-            Selects all vehicles.
+            Gets the mediator.
+            </summary>
+            <value>
+            The mediator.
+            </value>
+        </member>
+        <member name="T:OsirisTrading_API.Controllers.v1.VehicleController">
+            <summary>
+            The vehicles controller,
+            </summary>
+            <seealso cref="T:OsirisTrading_API.Controllers.BaseApiController" />
+        </member>
+        <member name="M:OsirisTrading_API.Controllers.v1.VehicleController.#ctor(Microsoft.Extensions.Caching.Memory.IMemoryCache)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OsirisTrading_API.Controllers.v1.VehicleController"/> class.
+            </summary>
+            <param name="memoryCache">The memory cache.</param>
+        </member>
+        <member name="M:OsirisTrading_API.Controllers.v1.VehicleController.SelectAllVehicles(System.Int32)">
+            <summary>
+            This endpoint is the one that gets called when we need to select all vehicles. We currently have
+            a defualt size of 20 vehicles, but you are allowed to select more or less.
             </summary>
             <returns></returns>
         </member>
         <member name="M:OsirisTrading_API.Controllers.v1.VehicleController.SelectVehicle(System.Int32)">
             <summary>
-            Selects the vehicle.
+            This endpoint is the one that gets called when we need to select a specific vehicle. 
             </summary>
             <param name="vehicleId">The vehicle identifier.</param>
             <returns></returns>
@@ -53,16 +74,12 @@
             The program
             </summary>
         </member>
-        <member name="F:OsirisTrading_API.Program.configuration">
-            <summary>
-            The configuration
-            </summary>
-        </member>
         <member name="M:OsirisTrading_API.Program.Main(System.String[])">
             <summary>
             Defines the entry point of the application.
             </summary>
             <param name="args">The arguments.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
         </member>
         <member name="M:OsirisTrading_API.Program.ConfigureConfiguration(Microsoft.Extensions.Configuration.IConfigurationBuilder)">
             <summary>

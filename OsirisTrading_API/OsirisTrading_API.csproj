@@ -22,6 +22,7 @@
     <ProjectReference Include="..\OsirisTrading.Contracts\OsirisTrading.Contracts.csproj" />
     <ProjectReference Include="..\OsirisTrading.Domain\OsirisTrading.Domain.csproj" />
     <ProjectReference Include="..\OsirisTrading.Infrastructure\OsirisTrading.Infrastructure.csproj" />
+    <ProjectReference Include="..\OsirisTrading.Mapping\OsirisTrading.Mapping.csproj" />
   </ItemGroup>
 
 </Project>

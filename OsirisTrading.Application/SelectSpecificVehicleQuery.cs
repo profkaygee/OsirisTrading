@@ -6,7 +6,7 @@ namespace OsirisTrading.Application
     /// <summary>
     /// The Specific Vehicle Query Manager.
     /// </summary>
-    /// <seealso cref="MediatR.IRequest&lt;OsirisTrading.Domain.Dto.Vehicle&gt;" />
+    /// <seealso cref="Vehicle" />
     public class SelectSpecificVehicleQuery : IRequest<Vehicle>
     {
         /// <summary>

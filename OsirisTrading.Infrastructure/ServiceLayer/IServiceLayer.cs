@@ -1,17 +1,18 @@
-﻿using System;
+﻿using OsirisTrading.Domain.Dto;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace OsirisTrading.Infrastructure.ServiceLayer
 {
-    interface IServiceLayer
+    /// <summary>
+    /// The interface for the service layer.
+    /// </summary>
+    public interface IServiceLayer
     {
-    }
-
-    class ServiceLayer:IServiceLayer
-    {
-        
+        /// <summary>
+        /// Selects the vehicles.
+        /// </summary>
+        /// <returns></returns>
+        Task<IList<Vehicle>> SelectVehicles();
     }
 }

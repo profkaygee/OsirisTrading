@@ -4,5 +4,38 @@
         <name>OsirisTrading.Contracts</name>
     </assembly>
     <members>
+        <member name="T:OsirisTrading.Contracts.ApplicationSettings">
+            <summary>
+            The application settings.
+            </summary>
+            <seealso cref="T:OsirisTrading.Contracts.IApplicationSettings" />
+        </member>
+        <member name="M:OsirisTrading.Contracts.ApplicationSettings.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OsirisTrading.Contracts.ApplicationSettings"/> class.
+            </summary>
+            <param name="configuration">The configuration.</param>
+        </member>
+        <member name="P:OsirisTrading.Contracts.ApplicationSettings.VehiclesDataUrl">
+            <summary>
+            Gets the vehicles data URL.
+            </summary>
+            <value>
+            The vehicles data URL.
+            </value>
+        </member>
+        <member name="T:OsirisTrading.Contracts.IApplicationSettings">
+            <summary>
+            The application settings.
+            </summary>
+        </member>
+        <member name="P:OsirisTrading.Contracts.IApplicationSettings.VehiclesDataUrl">
+            <summary>
+            Gets the vehicles data URL.
+            </summary>
+            <value>
+            The vehicles data URL.
+            </value>
+        </member>
     </members>
 </doc>
