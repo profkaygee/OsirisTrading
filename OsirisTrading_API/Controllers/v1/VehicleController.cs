@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 
 namespace OsirisTrading_API.Controllers.v1
 {
@@ -39,6 +40,7 @@ namespace OsirisTrading_API.Controllers.v1
         [HttpGet]
         [Route("all")]
         [ProducesResponseType(typeof(Vehicle), (int)HttpStatusCode.OK)]
+        [EnableCors("AllowAllPolicy")]
         public async Task<IActionResult> SelectAllVehicles(int size = 20)
         {
             if (_memoryCache.TryGetValue(ConstantKeys.VehiclesKey, out IList<Vehicle> vehicles))
@@ -68,6 +70,7 @@ namespace OsirisTrading_API.Controllers.v1
         [Route("{vehicleId}")]
         [ProducesResponseType(typeof(Vehicle), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(ValidationResult), (int)HttpStatusCode.BadRequest)]
+        [EnableCors("AllowAllPolicy")]
         public async Task<IActionResult> SelectVehicle(int vehicleId)
         {
             try

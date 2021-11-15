@@ -20,8 +20,11 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class AppComponent {
   title = 'Osiris';
+  data: Vehicle[] = [];
+  service: VehicleServiceService | undefined;
 
   constructor(service: VehicleServiceService) {
+    this.service = service;
     this.LoadVehicles(service);
   }
 
@@ -32,8 +35,20 @@ export class AppComponent {
   LoadVehicles(service: VehicleServiceService) {
     service.getVehicles()
       .subscribe((data: any) => {
-        debugger;
+        this.data = data;
       });
+  }
+
+  searchVehicle(phrase: string) {
+    this.service?.searchVehicles(phrase)
+      .subscribe((data: any) => {
+        debugger
+        this.data = data;
+      });
+  }
+
+  deleteVehicle(vehicleId: any) {
+    alert("Vehicle [" + vehicleId + "] would have been deleted here but its not implemented.");
   }
 }
 

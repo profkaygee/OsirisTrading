@@ -44,6 +44,29 @@ namespace OsirisTrading_API
         /// <param name="services">The services.</param>
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
+            services.AddControllers();
+            services.AddMemoryCache();
+
+            // Add the versioning
+            services.AddApiVersioning(config =>
+            {
+                config.DefaultApiVersion = new ApiVersion(1, 0);
+                config.AssumeDefaultVersionWhenUnspecified = true;
+            });
+
+            services.AddIdentityServer()
+                .AddDeveloperSigningCredential()
+                .AddInMemoryIdentityResources(OsirisTrading_API.Configuration.IdentityResources)
+                .AddInMemoryClients(OsirisTrading_API.Configuration.Clients)
+                .AddInMemoryApiResources(OsirisTrading_API.Configuration.Apis)
+                .AddTestUsers(TestUsers.Users);
+
+            //services.AddLocalApiAuthentication();
+            services.AddTransient<IRestClient, RestClient>();
+            services.AddTransient<IApplicationSettings, ApplicationSettings>();
+            services.AddTransient<IServiceLayer, ServiceLayer>();
+
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAllPolicy", builder =>
@@ -53,34 +76,9 @@ namespace OsirisTrading_API
                         .AllowAnyOrigin();
                 });
             });
-
-            services.AddMvc();
-            services.AddMemoryCache();
-
-            services.AddIdentityServer()
-                .AddDeveloperSigningCredential()
-                .AddInMemoryIdentityResources(OsirisTrading_API.Configuration.IdentityResources)
-                .AddInMemoryClients(OsirisTrading_API.Configuration.Clients)
-                .AddInMemoryApiResources(OsirisTrading_API.Configuration.Apis)
-                .AddTestUsers(TestUsers.Users);
-
-            services.AddLocalApiAuthentication();
-            services.AddTransient<IRestClient, RestClient>();
-            services.AddTransient<IApplicationSettings, ApplicationSettings>();
-            services.AddTransient<IServiceLayer, ServiceLayer>();
-
-            services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "OsirisTrading_API", Version = "v1" });
-            });
-
-            // Add the versioning
-            services.AddApiVersioning(config =>
-            {
-                config.DefaultApiVersion = new ApiVersion(1, 0);
-                config.AssumeDefaultVersionWhenUnspecified = true;
-                config.ReportApiVersions = true;
             });
 
             services.AddHealthChecks();
@@ -123,6 +121,7 @@ namespace OsirisTrading_API
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "OsirisTrading_API v1"));
             }
 
+            app.UseCors("AllowAllPolicy");
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();

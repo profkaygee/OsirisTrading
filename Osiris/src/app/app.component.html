@@ -361,12 +361,58 @@
   </div>
 
   <h2>Vehicles</h2>
-  <p>You can view all the vehicles below</p>
+
+  <p>You can search for a vehicle below:</p>
+  <div class="card-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Input</mat-label>
+      <input matInput #input>
+    </mat-form-field>
+
+    <div class="example-button-row">
+      <button mat-raised-button color="primary" (click)="searchVehicle(input.value)">Search</button>
+    </div>
+  </div>
+
+  <p>You can view all the vehicles below:</p>
 
   <input type="hidden" #selection>
 
   <div class="card-container">
-    
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Vehicle Make</th>
+          <th>VIN</th>
+          <th>Licence Plate</th>
+          <th>Colour</th>
+          <th>Transmission</th>
+          <th>Fuel Type</th>
+          <th>Car Type</th>
+          <th>Specifications</th>
+          <th>Options</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data">
+          <th>{{ item.id }}</th>
+          <td>{{ item.make_and_model }}</td>
+          <td>{{ item.vin }}</td>
+          <td>{{ item.license_plate }}</td>
+          <td>{{ item.color }}</td>
+          <td>{{ item.transmission }}</td>
+          <td>{{ item.fuel_type }}</td>
+          <td>{{ item.car_type }}</td>
+          <td>{{ item.specs }}</td>
+          <td>{{ item.car_options }}</td>
+          <td>
+            <button type="button" (click)="deleteVehicle(item.id);">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <!-- Footer -->

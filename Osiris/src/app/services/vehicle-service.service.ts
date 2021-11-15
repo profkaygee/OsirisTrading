@@ -16,7 +16,7 @@ export class VehicleServiceService {
   }
 
   public searchVehicles(phrase: string) {
-    this.url = this.url + "/vehicles/search/" + phrase; 
+    this.url = this.url + "/search/" + phrase; 
     return this.http.get(this.url);
   }
 }
